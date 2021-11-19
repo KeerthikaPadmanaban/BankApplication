@@ -1,0 +1,56 @@
+﻿
+
+@model Project1.Models.AccountDetail
+
+
+
+@{ ViewData["Title"] = "Account Details";
+    Layout = "~/Views/Shared/Dashboard.cshtml"; }
+
+<h3>Account Details</h3>
+<hr />
+
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+}
+
+
+
+
+
+<div>
+    <table>
+        <tr><td>Account Number : </td><td>@Model.AccNumber</td></tr>
+        <tr><td>Account Holder Name : </td><td>@Model.FirstName  @Model.LastName</td></tr>
+        <tr><td>Account Type : </td><td>@Model.AccType</td></tr>
+        <tr><td>User ID : </td><td>@Model.Userid</td></tr>
+        <tr><td>Date Of Birth : </td><td>@Model.Dob</td></tr>
+        <tr><td>Aadhar Card Number : </td><td>@Model.AadharNumber</td></tr>
+        <tr><td>Pan Card Number: </td><td>@Model.PanCardNumber</td></tr>
+        <tr><td>Nominee Name : </td><td>@Model.NomineeName</td></tr>
+        <tr><td>Mobile Number : </td><td>@Model.MobileNumber</td></tr>
+        <tr><td>Email ID : </td><td>@Model.EmailId</td></tr>
+        <tr><td>Temporary Address : </td><td>@Model.TempAddress</td></tr>
+        <tr><td>Permanent Address : </td><td>@Model.PermtAddress</td></tr>
+        <tr><td>Occupation : </td><td>@Model.Occupation</td></tr>
+        <tr><td>Annual Income : </td><td>@Model.AnnualIncome</td></tr>
+        <tr><td>Account Balance : </td><td>@Model.Balance</td></tr>
+        @*<tr><td>Opted for NetBanking : </td><td>@Model.NetBanking</td></tr*@
+    </table>
+</div>
+<br />
+<br />
+
+<div>
+    <input type="button"
+           value="Back"
+           onclick="location.href='@Url.Action("Index","Dashboard")'" />
+</div>
+

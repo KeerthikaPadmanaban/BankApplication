@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Project1.ViewModel.Statement>
+
+@{
+    ViewData["Title"] = "Account Statement";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+}
+<h3>Account Statement</h3>
+
+<div id="parentDiv">
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.Label("Transaction Number")
+                    @*@Html.DisplayNameFor(model => model.TransactionNumber)*@
+                </th>
+                <th>
+                    @Html.Label("Sender")
+                    @*@Html.DisplayNameFor(model => model.FromAccNumber)*@
+                </th>
+                <th>
+                    @Html.Label("Recipient")
+                    @*@Html.DisplayNameFor(model => model.ToAccNumber)*@
+                </th>
+                <th>
+                    @Html.Label("Amount")
+                    @*@Html.DisplayNameFor(model => model.TransferAmount)*@
+                </th>
+                <th>
+                    @Html.Label("Transaction Date")
+                    @*@Html.DisplayNameFor(model => model.TransactionDate)*@
+                </th>
+                <th>
+                    @Html.Label("Type Of Transaction")
+                    @*@Html.DisplayNameFor(model => model.TypeOfTransaction)*@
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransactionNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FromAccNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ToAccNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransferAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransactionDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeOfTransaction)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <h5>
+        Current Balance : @ViewBag.kk
+    </h5>
+</div>
+    <br />
+    <div>
+        <input type="button"
+               value="Back"
+               onclick="location.href='@Url.Action("Index","Dashboard")'" />
+    </div>
+<br />
+<br />
+
+<div>
+    <a asp-action="Dashboard"></a>
+     <a id="printPDF" class="btn btn-primary">Print Statement</a>
+            
+</div>
+
+@section scripts
+{
+    <script>
+        $("#printPDF").click(function () {
+            var element = document.getElementById('parentDiv');
+            html2pdf().from(element).set({
+                margin: [30, 10, 30, 10],
+                pagebreak: { avoid: 'tr' },
+                jsPDF: {
+                    orientation: 'landscape', unit: 'pt', format: 'letter', compressPDF: true
+                }
+            }).save()
+        });
+
+
+    </script>
+
+
+}
+
+

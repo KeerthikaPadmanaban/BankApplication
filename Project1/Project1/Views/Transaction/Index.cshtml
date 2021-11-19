@@ -1,0 +1,18 @@
+﻿@model Project1.Models.TransferDetail
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+
+
+    <h4>Payment Succesfull !!</h4>
+    <hr />
+    <h4>Available Balance :  @ViewBag.gg</h4> 
+
+    <div>
+        <input type="button"
+               value="Back"
+               onclick="location.href='@Url.Action("Index","Dashboard")'" />
+    </div>

@@ -1,0 +1,87 @@
+﻿@model Project1.ViewModel.transfernet
+
+
+@{
+    ViewData["Title"] = "transfer";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<h1>Fund Transfer</h1>
+
+<div class="text-danger">
+    @ViewBag.Message
+</div>
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="transfer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="Userid" class="control-label"></label>
+            <input asp-for="Userid" class="form-control" />
+            <span asp-validation-for="Userid" class="text-danger"></span>
+        </div*@
+             <div class="form-group">
+            <label asp-for="FromAccNumber" class="control-label">From Account Number</label>
+            <input  asp-for="FromAccNumber" value="@ViewBag.FromAccNumber" readonly= "readonly" class="form-control"  />
+            <span asp-validation-for="FromAccNumber" class="text-danger"></span>
+        </div>
+            <div class="form-group">
+                <label asp-for="ToAccNumber" class="control-label"> To Account Number</label>
+                <input asp-for="ToAccNumber" class="form-control" />
+                <span asp-validation-for="ToAccNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransferAmount" class="control-label">Amount</label>
+                <input asp-for="TransferAmount" class="form-control" />
+                <span asp-validation-for="TransferAmount" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+            <label asp-for="TransactionDate" class="control-label"></label>
+            <input asp-for="TransactionDate" class="form-control" />
+            <span asp-validation-for="TransactionDate" class="text-danger"></span>
+        </div>*@
+        <div class="form-group">
+            <label asp-for="TypeOfTransaction" class="control-label">Type of Transaction</label>
+            @*<input asp-for="TypeOfTransaction" class="form-control" />*@
+            @*<span asp-validation-for="TypeOfTransaction" class="text-danger"></span>*@
+            <select class="form-control" id="transnet" name="Type of Transaction">
+                <option value="">Select type</option>
+                <option value="1">NEFT</option>
+                <option value="2">IMPS</option>
+                <option value="2">RTGS</option>
+            </select>
+        </div>
+            @*<div class="form-group">
+            <label asp-for="ModeOfTransaction" class="control-label"></label>
+            <input asp-for="ModeOfTransaction" class="form-control" />
+            <span asp-validation-for="ModeOfTransaction" class="text-danger"></span>
+        </div>*@
+
+            <div class="form-group">
+                <input type="submit" value="Transfer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <input type="button"
+           value="Back"
+           onclick="location.href='@Url.Action("Index","Dashboard")'" />
+</div>
+
+
+

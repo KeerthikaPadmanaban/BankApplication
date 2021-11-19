@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h1>Welcome Admin</h1>
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+       
+    </style>
+}
+
+    <div class="alert-success">
+        @ViewBag.Message
+    </div>

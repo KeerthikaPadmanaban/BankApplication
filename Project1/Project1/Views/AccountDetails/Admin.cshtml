@@ -1,0 +1,44 @@
+﻿@model Project1.Models.AdminLogin
+
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/FirstPage.cshtml";
+}
+
+
+<h4>AdminLogin</h4>
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AdminId" class="control-label"></label>
+                <input asp-for="AdminId" class="form-control" />
+                <span asp-validation-for="AdminId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminPassword" class="control-label"></label>
+                <input asp-for="AdminPassword" class="form-control" />
+                <span asp-validation-for="AdminPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+}
+<h3>Dashboard</h3>
+<hr />
+
+
+
+<br />
+<div>
+    <input type="button"
+           value="Account Details"
+           onclick="location.href='@Url.Action("AccountDetails","Dashboard")'" />
+
+</div>
+<br />
+<div>
+    <input type="button"
+           value="Fund Transfer"
+           onclick="location.href='@Url.Action("transfer","Transaction")'" />
+</div>
+<br />
+<div>
+    <input type="button"
+           value="Change Password"
+           onclick="location.href='@Url.Action("ChangePassword","Dashboard")'" />
+</div>
+<br />
+<div>
+    <input type="button"
+           value="Account Statement"
+           onclick="location.href='@Url.Action("Statement","Dashboard")'" />
+</div>
+

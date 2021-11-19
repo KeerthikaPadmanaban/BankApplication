@@ -1,0 +1,82 @@
+﻿@model Project1.Models.TransferDetail
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>TransferDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Userid" class="control-label"></label>
+                <select asp-for="Userid" class="form-control" asp-items="ViewBag.Userid"></select>
+                <span asp-validation-for="Userid" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="TransactionNumber" />
+            <div class="form-group">
+                <label asp-for="FromAccNumber" class="control-label"></label>
+                <input asp-for="FromAccNumber" class="form-control" />
+                <span asp-validation-for="FromAccNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToAccNumber" class="control-label"></label>
+                <input asp-for="ToAccNumber" class="form-control" />
+                <span asp-validation-for="ToAccNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepositAmount" class="control-label"></label>
+                <input asp-for="DepositAmount" class="form-control" />
+                <span asp-validation-for="DepositAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WithdrawAmount" class="control-label"></label>
+                <input asp-for="WithdrawAmount" class="form-control" />
+                <span asp-validation-for="WithdrawAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransferAmount" class="control-label"></label>
+                <input asp-for="TransferAmount" class="form-control" />
+                <span asp-validation-for="TransferAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionDate" class="control-label"></label>
+                <input asp-for="TransactionDate" class="form-control" />
+                <span asp-validation-for="TransactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfTransaction" class="control-label"></label>
+                <input asp-for="TypeOfTransaction" class="form-control" />
+                <span asp-validation-for="TypeOfTransaction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModeOfTransaction" class="control-label"></label>
+                <input asp-for="ModeOfTransaction" class="form-control" />
+                <span asp-validation-for="ModeOfTransaction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balance" class="control-label"></label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentBalance" class="control-label"></label>
+                <input asp-for="CurrentBalance" class="form-control" />
+                <span asp-validation-for="CurrentBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

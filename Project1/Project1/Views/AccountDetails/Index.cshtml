@@ -1,0 +1,150 @@
+﻿@model IEnumerable<Project1.Models.AccountDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LoginLayout.cshtml";
+}
+
+<h1>Index</h1>
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/image/gk1.jpg');
+           
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+}
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccNumber)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfirmPassword)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.AccType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AadharNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PanCardNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomineeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TempAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermtAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Occupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnnualIncome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.NetBanking)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccNumber)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.ConfirmPassword)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dob)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AadharNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PanCardNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomineeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MobileNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TempAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PermtAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Occupation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnnualIncome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Balance)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.NetBanking)
+                </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Userid">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Userid">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Userid">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
